@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Pass Page</title>
+ </head>
+<body>
+
+<h2>Pass phrase by Mohammed Javeed</h2>
+
+<form>
+    <label for = "form1_secretPhrase">Enter the secret phrase </label>
+    <input type ="password" id = "form1_secretPhrase" name = "form1_secretPhrase" min = 10 max = 50 step = 2 value = "Let me in"> <br>
+
+    <label for = "form1_phraseCheck">Enter a phrase</label>
+    <input type = "text" id = "form1_checkPhrase" name = "form1_checkPhrase" autofocus> <br>
+
+    <input type = "button" onclick = "processPhrase()" value = "Check the phrase">
+</form>
+
+
+<p id = "result">Result will be displayed</p>
+
+<script> 
+var correct = 0;
+var wrong = 0;
+function processPhrase()
+{ 
+    
+    secretPhrase = document.getElementById("form1_secretPhrase").value
+    checkPhrase = document.getElementById("form1_checkPhrase").value 
+    out = document.getElementById("result")
+    if(secretPhrase == checkPhrase)
+    { 
+        correct++; 
+        alert("Access allowed");
+    } 
+    else 
+    {
+        wrong++;
+        alert("Access denied");
+      
+    }
+    out.innerHTML = " correct count: " + correct + " wrong count: " +wrong 
+}
+</script>  
+
+</body>
+</html>
