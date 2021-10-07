@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Car Page </title>
+    </head>
+<body>
+
+<h2>Javeed Mohammed orders a car</h2>
+
+<form>
+    <label for="electric">Electric </label>
+    <input type ="checkbox" id="electric" name="electric" > <br>
+
+    <label for="ac">AC</label>
+    <input type ="checkbox" id="ac" name="ac" autofocus> <br> 
+
+    <label for="gps">GPS</label>
+    <input type ="checkbox" id="gps" name="gps" autofocus> <br>
+
+    <input type="button" onclick="orderCar()" value="Order a car">
+</form>
+
+
+<p id="result">Result of your selection</p>
+
+<script> 
+ var my_car={}
+out= document.getElementById("result")
+function orderCar(){
+    Electric = document.getElementById("electric")
+    Ac = document.getElementById("ac")
+    Gps = document.getElementById("gps")
+    my_car = {
+            Electric: false,
+            AC: false,
+            GPS: false
+            };
+    my_car.Electric = Electric.checked
+    my_car.AC = Ac.checked
+    my_car.GPS = Gps.checked
+    out.innerHTML = Object.values(my_car);
+}
+</script>  
+
+<form>
+    <label for="property">Enter a property </label>
+    <input type ="text" id="property" name="property"  value="color"> <br>
+
+    <label for="valueofprop">Enter a value</label>
+    <input type ="text" id="valueofprop" name="valueofprop" autofocus> <br> 
+
+    <input type="button" onclick="updateCar()" value="Update the car">
+</form> 
+<p id ="result1" > Result</p> 
+<script>
+    function updateCar()
+    {
+        my_car.prop = document.getElementById("property").value;
+        my_car.valofprop = document.getElementById("valueofprop").value;
+        console.log(my_car)
+        document.getElementById("result1").innerHTML = Object.values(my_car);
+    }
+</script>
+</body>
+</html> 
